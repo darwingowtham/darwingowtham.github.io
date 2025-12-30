@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* NexusPort Dark Theme - Deep Navy Base */
+    --background: 220 40% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 35% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 35% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Electric Blue Primary */
+    --primary: 200 90% 55%;
+    --primary-foreground: 220 40% 8%;
+
+    /* Neon Cyan Secondary */
+    --secondary: 180 85% 60%;
+    --secondary-foreground: 220 40% 8%;
+
+    /* Vibrant Magenta Accent */
+    --accent: 320 90% 60%;
+    --accent-foreground: 0 0% 95%;
+
+    --muted: 220 30% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 200 90% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradient colors for blurs */
+    --gradient-cyan: 180 85% 60%;
+    --gradient-blue: 200 90% 55%;
+    --gradient-magenta: 320 90% 60%;
+    --gradient-purple: 270 80% 60%;
+  }
+
+  /* Light Theme */
+  html.light {
+    --background: 0 0% 100%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 96%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 96%;
+    --popover-foreground: 220 30% 10%;
+
+    /* Electric Blue Primary */
+    --primary: 200 90% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Neon Cyan Secondary */
+    --secondary: 180 85% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Vibrant Magenta Accent */
+    --accent: 320 90% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 220 15% 75%;
+    --muted-foreground: 220 30% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 200 90% 45%;
+
+    /* Custom gradient colors for blurs */
+    --gradient-cyan: 180 85% 45%;
+    --gradient-blue: 200 90% 45%;
+    --gradient-magenta: 320 90% 50%;
+    --gradient-purple: 270 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--secondary));
+  }
+}
